@@ -75,10 +75,21 @@ WSGI_APPLICATION = 'pythondemo2.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
+    #'default': {
+     #   'ENGINE': 'django.db.backends.sqlite3',
+      #  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django', #数据库名称
+        'USER': 'root',#用户名
+        'PASSWORD': 'root', #密码
+        'HOST': 'localhost', #地址
+        'PORT': '3306', #端口
+        'CHARSET': 'utf8',
+        'COLLATION': 'utf8_general_ci',
     }
+
 }
 
 
@@ -112,7 +123,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
